@@ -11,9 +11,7 @@ We may add recipes for other tasks as well in the future.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Table of Contents
 
-   yesno
-
-   librispeech
-
-   aishell
+   Non-streaming-ASR/index
+   Streaming-ASR/index

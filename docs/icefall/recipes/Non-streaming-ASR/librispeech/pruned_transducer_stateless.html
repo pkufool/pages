@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pruned transducer statelessX &mdash; icefall 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="TIMIT" href="../timit/index.html" />
+    <link rel="prev" title="Conformer CTC" href="conformer_ctc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> icefall
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Recipes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Non Streaming ASR</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../aishell/index.html">aishell</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">LibriSpeech</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="tdnn_lstm_ctc.html">TDNN-LSTM-CTC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conformer_ctc.html">Conformer CTC</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Pruned transducer statelessX</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../timit/index.html">TIMIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yesno/index.html">YesNo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Streaming-ASR/index.html">Streaming ASR</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../huggingface/index.html">Huggingface</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">icefall</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Recipes</a> &raquo;</li>
+          <li><a href="../index.html">Non Streaming ASR</a> &raquo;</li>
+          <li><a href="index.html">LibriSpeech</a> &raquo;</li>
+      <li>Pruned transducer statelessX</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/k2-fsa/icefall/blob/master/icefall/docs/source/recipes/Non-streaming-ASR/librispeech/pruned_transducer_stateless.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pruned-transducer-statelessx">
+<h1>Pruned transducer statelessX<a class="headerlink" href="#pruned-transducer-statelessx" title="Permalink to this headline"></a></h1>
+<p>This tutorial shows you how to run a conformer transducer model
+with the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a> dataset.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>We assume you have read the page <a class="reference internal" href="../../../installation/index.html#install-icefall"><span class="std std-ref">Installation</span></a> and have setup
+the environment for <code class="docutils literal notranslate"><span class="pre">icefall</span></code>.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>We recommend you to use a GPU or several GPUs to run this recipe.</p>
+</div>
+<p>In this tutorial, you will learn:</p>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="arabic simple">
+<li><p>How to prepare data for training and decoding</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>How to start the training, either with a single GPU or multiple GPUs</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>How to do decoding after training, with greedy_search modified_beam_search fast_beam_search</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>How to use a pre-trained model, provided by us</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>How to deploy your trained model with our server framework <a class="reference external" href="https://github.com/k2-fsa/sherpa">Sherpa</a>.</p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+<section id="data-preparation">
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> egs/librispeech/ASR
+$ ./prepare.sh
+</pre></div>
+</div>
+<p>The script <code class="docutils literal notranslate"><span class="pre">./prepare.sh</span></code> handles the data preparation for you, <strong>automagically</strong>.
+All you need to do is to run it.</p>
+<p>The data preparation contains several stages, you can use the following two
+options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--stage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--stop-stage</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>to control which stage(s) should be run. By default, all stages are executed.</p>
+<p>For example,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> egs/librispeech/ASR
+$ ./prepare.sh --stage <span class="m">0</span> --stop-stage <span class="m">0</span>
+</pre></div>
+</div>
+<p>means to run only stage 0.</p>
+<p>To run stage 2 to stage 5, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./prepare.sh --stage <span class="m">2</span> --stop-stage <span class="m">5</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you have pre-downloaded the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a>
+dataset and the <a class="reference external" href="http://www.openslr.org/17/">musan</a> dataset, say,
+they are saved in <code class="docutils literal notranslate"><span class="pre">/tmp/LibriSpeech</span></code> and <code class="docutils literal notranslate"><span class="pre">/tmp/musan</span></code>, you can modify
+the <code class="docutils literal notranslate"><span class="pre">dl_dir</span></code> variable in <code class="docutils literal notranslate"><span class="pre">./prepare.sh</span></code> to point to <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> so that
+<code class="docutils literal notranslate"><span class="pre">./prepare.sh</span></code> won’t re-download them.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All generated files by <code class="docutils literal notranslate"><span class="pre">./prepare.sh</span></code>, e.g., features, lexicon, etc,
+are saved in <code class="docutils literal notranslate"><span class="pre">./data</span></code> directory.</p>
+</div>
+<p>We provide the following YouTube video showing how to run <code class="docutils literal notranslate"><span class="pre">./prepare.sh</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To get the latest news of <a class="reference external" href="https://github.com/k2-fsa">next-gen Kaldi</a>, please subscribe
+the following YouTube channel by <a class="reference external" href="https://www.youtube.com/channel/UC_VaumpkmINz1pNkFXAN9mw">Nadira Povey</a>:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.youtube.com/channel/UC_VaumpkmINz1pNkFXAN9mw">https://www.youtube.com/channel/UC_VaumpkmINz1pNkFXAN9mw</a></p>
+</div></blockquote>
+</div>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/ofEIoJL-mGM" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline"></a></h2>
+</section>
+<section id="decoding">
+<h2>Decoding<a class="headerlink" href="#decoding" title="Permalink to this headline"></a></h2>
+</section>
+<section id="pre-trained-model">
+<h2>Pre-trained Model<a class="headerlink" href="#pre-trained-model" title="Permalink to this headline"></a></h2>
+</section>
+<section id="deploy-with-sherpa">
+<h2>Deploy with Sherpa<a class="headerlink" href="#deploy-with-sherpa" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="conformer_ctc.html" class="btn btn-neutral float-left" title="Conformer CTC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../timit/index.html" class="btn btn-neutral float-right" title="TIMIT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, icefall development team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

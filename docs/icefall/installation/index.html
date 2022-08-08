@@ -1,73 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Installation &mdash; icefall 0.1 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Recipes" href="../recipes/index.html" />
     <link rel="prev" title="Icefall" href="../index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> icefall
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -75,21 +36,11 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-pytorch-and-torchaudio">(0) Install PyTorch and torchaudio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-k2">(1) Install k2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-lhotse">(2) Install lhotse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#download-icefall">(3) Download icefall</a></li>
@@ -107,100 +58,80 @@
 <li class="toctree-l3"><a class="reference internal" href="#decoding">Decoding</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#youtube-video">YouTube Video</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Recipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">Huggingface</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">icefall</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Installation</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/k2-fsa/icefall/blob/master/icefall/docs/source/installation/index.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="installation">
-<span id="install-icefall"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="installation">
+<span id="install-icefall"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
 <ul class="simple">
 <li><p><img alt="Supported operating systems" src="../_images/os-Linux_macOS-ff69b4.svg" /></p></li>
 <li><p><img alt="Supported devices" src="../_images/device-CPU_CUDA-orange.svg" /></p></li>
-<li><p><img alt="Supported python versions" src="../_images/python-3.6_3.7_3.8_3.9-blue.svg" /></p></li>
-<li><p><img alt="Supported PyTorch versions" src="../_images/torch-1.6.0_1.7.0_1.7.1_1.8.0_1.8.1_1.9.0-green.svg" /></p></li>
-<li><p><img alt="Supported k2 versions" src="../_images/k2-v-1.7.svg" /></p></li>
+<li><p><img alt="Supported python versions" src="../_images/python-gt-v3.6-blue.svg" /></p></li>
+<li><p><img alt="Supported PyTorch versions" src="../_images/torch-gt-v1.6.0-green.svg" /></p></li>
+<li><p><img alt="Supported k2 versions" src="../_images/k2-gt-v1.9-blueviolet.svg" /></p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">icefall</span></code> depends on <a class="reference external" href="https://github.com/k2-fsa/k2">k2</a> and
 <a class="reference external" href="https://github.com/lhotse-speech/lhotse">lhotse</a>.</p>
-<p>We recommend you to install <code class="docutils literal notranslate"><span class="pre">k2</span></code> first, as <code class="docutils literal notranslate"><span class="pre">k2</span></code> is bound to
-a specific version of PyTorch after compilation. Install <code class="docutils literal notranslate"><span class="pre">k2</span></code> also
-installs its dependency PyTorch, which can be reused by <code class="docutils literal notranslate"><span class="pre">lhotse</span></code>.</p>
-<div class="section" id="install-k2">
-<h2>(1) Install k2<a class="headerlink" href="#install-k2" title="Permalink to this headline">¶</a></h2>
-<p>Please refer to <a class="reference external" href="https://k2.readthedocs.io/en/latest/installation/index.html">https://k2.readthedocs.io/en/latest/installation/index.html</a>
+<p>We recommend you to use the following steps to install the dependencies.</p>
+<ul class="simple">
+<li><ol class="arabic simple" start="0">
+<li><p>Install PyTorch and torchaudio</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>Install k2</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Install lhotse</p></li>
+</ol>
+</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Installation order matters.</p>
+</div>
+<section id="install-pytorch-and-torchaudio">
+<h2>(0) Install PyTorch and torchaudio<a class="headerlink" href="#install-pytorch-and-torchaudio" title="Permalink to this headline"></a></h2>
+<p>Please refer <a class="reference external" href="https://pytorch.org/">https://pytorch.org/</a> to install PyTorch
+and torchaudio.</p>
+</section>
+<section id="install-k2">
+<h2>(1) Install k2<a class="headerlink" href="#install-k2" title="Permalink to this headline"></a></h2>
+<p>Please refer to <a class="reference external" href="https://k2-fsa.github.io/k2/installation/index.html">https://k2-fsa.github.io/k2/installation/index.html</a>
 to install <code class="docutils literal notranslate"><span class="pre">k2</span></code>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>You need to install <code class="docutils literal notranslate"><span class="pre">k2</span></code> with a version at least <strong>v1.7</strong>.</p>
+<p>You need to install <code class="docutils literal notranslate"><span class="pre">k2</span></code> with a version at least <strong>v1.9</strong>.</p>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -208,27 +139,24 @@ to install <code class="docutils literal notranslate"><span class="pre">k2</span
 please install a version of <code class="docutils literal notranslate"><span class="pre">k2</span></code> that is compiled against the version
 of PyTorch you are using.</p>
 </div>
-</div>
-<div class="section" id="install-lhotse">
-<h2>(2) Install lhotse<a class="headerlink" href="#install-lhotse" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="install-lhotse">
+<h2>(2) Install lhotse<a class="headerlink" href="#install-lhotse" title="Permalink to this headline"></a></h2>
 <p>Please refer to <a class="reference external" href="https://lhotse.readthedocs.io/en/latest/getting-started.html#installation">https://lhotse.readthedocs.io/en/latest/getting-started.html#installation</a>
 to install <code class="docutils literal notranslate"><span class="pre">lhotse</span></code>.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Install <code class="docutils literal notranslate"><span class="pre">lhotse</span></code> also installs its dependency <a class="reference external" href="https://github.com/pytorch/audio">torchaudio</a>.</p>
+<p>We strongly recommend you to use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lhotse</span><span class="o">-</span><span class="n">speech</span><span class="o">/</span><span class="n">lhotse</span>
+</pre></div>
 </div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>If you have installed <code class="docutils literal notranslate"><span class="pre">torchaudio</span></code>, please consider uninstalling it before
-installing <code class="docutils literal notranslate"><span class="pre">lhotse</span></code>. Otherwise, it may update your already installed PyTorch.</p>
+<p>to install the latest version of lhotse.</p>
 </div>
-</div>
-<div class="section" id="download-icefall">
-<h2>(3) Download icefall<a class="headerlink" href="#download-icefall" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">icefall</span></code> is a collection of Python scripts, so you don’t need to install it
-and we don’t provide a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> to install it.</p>
-<p>What you need is to download it and set the environment variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>
-to point to it.</p>
+</section>
+<section id="download-icefall">
+<h2>(3) Download icefall<a class="headerlink" href="#download-icefall" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">icefall</span></code> is a collection of Python scripts; what you need is to download it
+and set the environment variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> to point to it.</p>
 <p>Assume you want to place <code class="docutils literal notranslate"><span class="pre">icefall</span></code> in the folder <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>. The
 following commands show you how to setup <code class="docutils literal notranslate"><span class="pre">icefall</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /tmp
@@ -244,12 +172,12 @@ pip install -r requirements.txt
 To switch among different versions of <code class="docutils literal notranslate"><span class="pre">icefall</span></code>, just set <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>
 to point to the version you want.</p>
 </div>
-</div>
-<div class="section" id="installation-example">
-<h2>Installation example<a class="headerlink" href="#installation-example" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installation-example">
+<h2>Installation example<a class="headerlink" href="#installation-example" title="Permalink to this headline"></a></h2>
 <p>The following shows an example about setting up the environment.</p>
-<div class="section" id="create-a-virtual-environment">
-<h3>(1) Create a virtual environment<a class="headerlink" href="#create-a-virtual-environment" title="Permalink to this headline">¶</a></h3>
+<section id="create-a-virtual-environment">
+<h3>(1) Create a virtual environment<a class="headerlink" href="#create-a-virtual-environment" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ virtualenv -p python3.8  test-icefall
 
 created virtual environment CPython3.8.6.final.0-64 <span class="k">in</span> 1540ms
@@ -260,15 +188,15 @@ irtualenv<span class="o">)</span>
   activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
 </pre></div>
 </div>
-</div>
-<div class="section" id="activate-your-virtual-environment">
-<h3>(2) Activate your virtual environment<a class="headerlink" href="#activate-your-virtual-environment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="activate-your-virtual-environment">
+<h3>(2) Activate your virtual environment<a class="headerlink" href="#activate-your-virtual-environment" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> test-icefall/bin/activate
 </pre></div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>(3) Install k2<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>(3) Install k2<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install <span class="nv">k2</span><span class="o">==</span><span class="m">1</span>.4.dev20210822+cpu.torch1.9.0 -f https://k2-fsa.org/nightly/index.html
 
 Looking <span class="k">in</span> links: https://k2-fsa.org/nightly/index.html
@@ -290,9 +218,9 @@ Successfully installed graphviz-0.17 k2-1.4.dev20210822+cpu.torch1.9.0 torch-1.9
 <p>We choose to install a CPU version of k2 for testing. You would probably want to install
 a CUDA version of k2.</p>
 </div>
-</div>
-<div class="section" id="id2">
-<h3>(4) Install lhotse<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>(4) Install lhotse<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/lhotse-speech/lhotse
 
 Collecting git+https://github.com/lhotse-speech/lhotse
@@ -359,9 +287,9 @@ valtree-3.1.0 lhotse-0.8.0.dev-2a1410b-clean lilcom-1.1.1 numpy-1.21.2 packaging
 tedcontainers-2.4.0 toolz-0.11.1 torchaudio-0.9.0 tqdm-4.62.1
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>(5) Download icefall<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id3">
+<h3>(5) Download icefall<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /tmp
 $ git clone https://github.com/k2-fsa/icefall
 
@@ -449,15 +377,15 @@ s-0.2.8 requests-2.26.0 requests-oauthlib-1.3.0 rsa-4.7.2 sentencepiece-0.1.96 s
 .6.1 tensorboard-plugin-wit-1.8.0 urllib3-1.26.6 werkzeug-2.0.1
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="test-your-installation">
-<h2>Test Your Installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="test-your-installation">
+<h2>Test Your Installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline"></a></h2>
 <p>To test that your installation is successful, let us run
 the <a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/yesno/ASR">yesno recipe</a>
 on CPU.</p>
-<div class="section" id="data-preparation">
-<h3>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h3>
+<section id="data-preparation">
+<h3>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span>/tmp/icefall:<span class="nv">$PYTHONPATH</span>
 $ <span class="nb">cd</span> /tmp/icefall
 $ <span class="nb">cd</span> egs/yesno/ASR
@@ -505,9 +433,9 @@ d(std::istream&amp;):140
 2021-08-23 19:27:35,936 INFO [compile_hlg.py:123] Saving HLG.pt to data/lang_phone
 </pre></div>
 </div>
-</div>
-<div class="section" id="training">
-<h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="training">
+<h3>Training<a class="headerlink" href="#training" title="Permalink to this headline"></a></h3>
 <p>Now let us run the training part:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export CUDA_VISIBLE_DEVICES=&quot;&quot;
 $ ./tdnn/train.py
@@ -564,9 +492,9 @@ le_scores&#39;: True, &#39;world_size&#39;: 1, &#39;master_port&#39;: 12354, &#3
 2021-08-23 19:30:52,128 INFO [train.py:537] Done!
 </pre></div>
 </div>
-</div>
-<div class="section" id="decoding">
-<h3>Decoding<a class="headerlink" href="#decoding" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="decoding">
+<h3>Decoding<a class="headerlink" href="#decoding" title="Permalink to this headline"></a></h3>
 <p>Let us use the trained model to decode the test set:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tdnn/decode.py
 </pre></div>
@@ -592,56 +520,55 @@ To keep the current behavior, use torch.div(a, b, rounding_mode=&#39;trunc&#39;)
 </div>
 <p><strong>Congratulations!</strong> You have successfully setup the environment and have run the first recipe in <code class="docutils literal notranslate"><span class="pre">icefall</span></code>.</p>
 <p>Have fun with <code class="docutils literal notranslate"><span class="pre">icefall</span></code>!</p>
+</section>
+</section>
+<section id="youtube-video">
+<h2>YouTube Video<a class="headerlink" href="#youtube-video" title="Permalink to this headline"></a></h2>
+<p>We provide the following YouTube video showing how to install <code class="docutils literal notranslate"><span class="pre">icefall</span></code>.
+It also shows how to debug various problems that you may encounter while
+using <code class="docutils literal notranslate"><span class="pre">icefall</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To get the latest news of <a class="reference external" href="https://github.com/k2-fsa">next-gen Kaldi</a>, please subscribe
+the following YouTube channel by <a class="reference external" href="https://www.youtube.com/channel/UC_VaumpkmINz1pNkFXAN9mw">Nadira Povey</a>:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.youtube.com/channel/UC_VaumpkmINz1pNkFXAN9mw">https://www.youtube.com/channel/UC_VaumpkmINz1pNkFXAN9mw</a></p>
+</div></blockquote>
 </div>
-</div>
-</div>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/LVmrBD0tLfE" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../recipes/index.html" class="btn btn-neutral float-right" title="Recipes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Icefall" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../recipes/index.html" class="btn btn-neutral float-right" title="Recipes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, icefall development team.
-
-    </p>
+    <p>&#169; Copyright 2021, icefall development team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
